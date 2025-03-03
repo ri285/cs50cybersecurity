@@ -1,5 +1,8 @@
-from string import ascii_letters, digits, punctuation
-from itertools import product
+def custom_decrypt(encrypted_text):
+    shift = 3  # Same shift used for encryption
+    reversed_text = "".join(chr(ord(c) - shift) for c in encrypted_text)  # Reverse shift
+    original_text = reversed_text[::-1]  # Reverse back to original
+    print(original_text)
 
-for passcode in product(ascii_letters + digits + punctuation, repeat=4):
-    print("".join(passcode))
+hidden_encrypted_pass = ""  
+custom_decrypt(hidden_encrypted_pass)
